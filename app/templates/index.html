@@ -3,49 +3,16 @@
 {% import "_macros.html" as macros %}
 {% block title %}Tuklab{% endblock %}
 {% block page_content %}
-<div class="page-header">
-Hello,
-{% if current_user.is_authenticated %}
-{{ current_user.username }}
-{% else %}
-Stranger
-{% endif %}
+<div class="container-fluid" >
+<div class="container-fluid text-center bg-1">
+<h1 class="text-center" style="font-family:Purisa; font-size:50px;">About</h1>
 
-</div>
-{{ wtf.quick_form(form) }}
-<div>
-{% if current_user.can(Permission.WRITE_ARTICLES) %}
-{{ wtf.quick_form(form) }}
-{% include '_posts.html' %}
-<div class="pagination">
-{{ macros.pagination_widget(pagination, '.index') }}
-</div>
-{% endif %}
-</div>
-<ul class="posts">
-{% for post in posts %}
-<li class="post">
-<div class="profile-thumbnail">
-<a href="{{ url_for('.user', username=post.author.username) }}">
-<img class="img-rounded profile-thumbnail"
-src="{{ post.author.gravatar(size=40) }}">
-</a>
-</div>
-<div class="post-date">{{ moment(post.timestamp).fromNow() }}</div>
-<div class="post-author">
-<a href="{{ url_for('.user', username=post.author.username) }}">
-{{ post.author.username }}
-</a>
-</div>
-<div class="post-body">{{ post.body }}</div>
-</li>
-{% endfor %}
-</ul>
+<img src="static/favicon.ico" height=200px width=200px class="img-circle"/>
 
+<h3 style="font-family:Umpush; font-size:40px;"> Tuklab </h3>
+<p style="font-family:URW Chancery L; font-size:30px;">We are a micro-blogging platform built on python</p>
+<p style="font-family:FreeSerif; font-size:30px;">Come on! Join the band-wagon</p>
+</div>
+</div>
 
-{% endblock %}
-
-{% block scripts %}
-{{ super() }}
-{{ pagedown.include_pagedown() }}
 {% endblock %}
