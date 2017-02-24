@@ -37,7 +37,6 @@ MarkupSafe==0.23
 packaging==16.8
 passlib==1.7.1
 pbr==1.10.0
-pkg-resources==0.0.0
 procfile==0.1.0
 psycopg2==2.6.2
 Pygments==2.2.0
