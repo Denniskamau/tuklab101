@@ -19,8 +19,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url_for('main.index') }}">Tuklab</a>
-        </div>
+               <ul class="nav navbar-nav navbar-right">
+              <li><div style="position:relative">
+              <img src="static/favicon.ico" class="inline img-circle" style="width: 10px position:absolute left:4px top:4px" alt="tuklab"height="50" width="50"/></div></li>
+              <li><a class="navbar-brand" href="{{ url_for('main.index') }}">Tuklab</a></li>
+            </ul>
+          </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="{{ url_for('main.index') }}">Home</a></li>
@@ -45,7 +49,8 @@
                     </ul>
                 </li>
                 {% else %}
-                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+                <li><a href="{{ url_for('auth.login') }}">LOG IN</a></li>
+                <li><a href="{{ url_for('auth.register') }}">REGISTER</a></li>
                 {% endif %}
             </ul>
         </div>
